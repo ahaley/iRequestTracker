@@ -25,6 +25,45 @@
     return self;
 }
 
+- (IBAction)saveChanges
+{
+    NSLog(@"Save Changes!");
+    
+    NSString *urlFormat = @"http://rt.cieditions.com/rt/REST/1.0/ticket/%@/edit?user=root&pass=pinhead";
+    NSString *urlString = [NSString stringWithFormat:urlFormat, ticketId_];
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *body = [NSString stringWithFormat:@"content=Subject: %@", [subjectField text]];
+    
+    [request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"successful call to RT, response = %@", operation.responseString);
+        
+
+    }
+         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
+         }];
+    
+    [operation start];
+
+    
+}
+
+//Close keyboard after hitting return
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
 - (void)parseTicket:(NSString*)ticketString
 {
     NSArray *lines =
@@ -63,6 +102,9 @@
 
 - (void)loadTicketId:(NSString*)ticketId
 {
+    ticketId_ = ticketId;
+
+
     NSString *urlFormat = @"http://rt.cieditions.com/rt/REST/1.0/ticket/%@?user=root&pass=pinhead";
     NSString *urlString = [NSString stringWithFormat:urlFormat, ticketId];
     NSURL *url = [[NSURL alloc] initWithString:urlString];

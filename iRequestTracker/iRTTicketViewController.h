@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface iRTTicketViewController : UIViewController
+@interface iRTTicketViewController : UIViewController<UITextFieldDelegate>
 {
     IBOutlet UITextField *queueField;
     IBOutlet UITextField *ownerField;
@@ -16,7 +16,11 @@
     IBOutlet UITextField *createdField;
     IBOutlet UITextField *statusField;
     IBOutlet UITextField *subjectField;
+    
+    NSString* ticketId_;
 }
 
+- (IBAction)saveChanges;
 - (void)loadTicketId:(NSString*)ticketId;
+
 @end
