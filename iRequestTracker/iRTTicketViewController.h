@@ -16,11 +16,13 @@
     IBOutlet UITextField *createdField;
     IBOutlet UITextField *statusField;
     IBOutlet UITextField *subjectField;
+    IBOutlet UIButton *submitButton;
     
     NSString* ticketId_;
 }
 
 - (IBAction)saveChanges;
 - (void)loadTicketId:(NSString*)ticketId;
+- (void)setNew;
 
 @end

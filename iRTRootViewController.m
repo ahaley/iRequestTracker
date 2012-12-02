@@ -24,7 +24,24 @@
 
 - (void)viewDidLoad
 {
+    
+    UIBarButtonItem *actionBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addTicket)];
+    self.navigationItem.rightBarButtonItem = actionBtn;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [ticketDictionary removeAllObjects];
     [self downloadTickets];
+}
+
+- (void)addTicket
+{
+    iRTTicketViewController *child = [self ticketViewController];
+ 
+    [child setNew];
+    
+    [self.navigationController pushViewController:child animated:true];
 }
 
 - (iRTTicketViewController*)ticketViewController

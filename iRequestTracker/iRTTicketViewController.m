@@ -25,25 +25,66 @@
     return self;
 }
 
+- (void)setNew
+{
+    [submitButton setTitle:@"Create Ticket" forState:UIControlStateNormal];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    subjectField.text = @"";
+    createdField.text = @"";
+    creatorField.text = @"";
+    ownerField.text = @"";
+    queueField.text = @"";
+    statusField.text = @"";
+    ticketId_ = nil;
+}
+
 - (IBAction)saveChanges
 {
     NSLog(@"Save Changes!");
     
-    NSString *urlFormat = @"http://rt.cieditions.com/rt/REST/1.0/ticket/%@/edit?user=root&pass=pinhead";
+    NSString *urlFormat;
+    
+    if (ticketId_ != nil) {
+        urlFormat = @"http://rt.cieditions.com/rt/REST/1.0/ticket/%@/edit?user=root&pass=pinhead";
+    }
+    else {
+        urlFormat = @"http://rt.cieditions.com/rt/REST/1.0/ticket/new?user=root&pass=pinhead";
+    }
+    
     NSString *urlString = [NSString stringWithFormat:urlFormat, ticketId_];
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     [request setHTTPMethod:@"POST"];
+
     
-    NSString *body = [NSString stringWithFormat:@"content=Subject: %@", [subjectField text]];
+    NSString *body;
+    if (ticketId_ != nil) {
+        body = [NSString stringWithFormat:
+                @"content=Subject: %@\nOwner: %@",
+                [subjectField text], [ownerField text]];
+    
+    }
+    else {
+        body = [NSString stringWithFormat:
+                @"content=Queue: General\nSubject: %@\nOwner: %@",
+                [subjectField text], [ownerField text]];
+    }
+    
     
     [request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Success" message:operation.responseString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [message show];
         
         NSLog(@"successful call to RT, response = %@", operation.responseString);
         
@@ -104,7 +145,8 @@
 {
     ticketId_ = ticketId;
 
-
+    [submitButton setTitle:@"Save Changes" forState:UIControlStateNormal];
+    
     NSString *urlFormat = @"http://rt.cieditions.com/rt/REST/1.0/ticket/%@?user=root&pass=pinhead";
     NSString *urlString = [NSString stringWithFormat:urlFormat, ticketId];
     NSURL *url = [[NSURL alloc] initWithString:urlString];
