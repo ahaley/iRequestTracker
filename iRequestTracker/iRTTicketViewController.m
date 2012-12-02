@@ -41,6 +41,47 @@
     ticketId_ = nil;
 }
 
+- (void)closeTicket
+{
+    if (ticketId_ == nil) {
+        return;
+    }
+    
+    NSString *urlFormat = @"http://rt.cieditions.com/rt/REST/1.0/ticket/%@/edit?user=root&pass=pinhead";
+        
+    NSString *urlString = [NSString stringWithFormat:urlFormat, ticketId_];
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    [request setHTTPMethod:@"POST"];
+    
+    
+    NSString *body = [statusField.text isEqualToString:@" Resolved"] ? @"content=Status: Open" : @"content=Status: Resolved";
+       
+    
+    [request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Success" message:operation.responseString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [message show];
+        
+        NSLog(@"successful call to RT, response = %@", operation.responseString);
+        
+        
+    }
+     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
+     }];
+    
+    [operation start];
+
+}
+
 - (IBAction)saveChanges
 {
     NSLog(@"Save Changes!");
@@ -137,6 +178,12 @@
         }
         else if ([name isEqualToString:@"Status"]) {
             statusField.text = value;
+            if ([value isEqualToString:@" Resolved"]) {
+                [closeTicketButton setTitle:@"Reopen Ticket" forState:UIControlStateNormal];
+            }
+            else if ([value isEqualToString:@"new"]) {
+                [closeTicketButton setTitle:@"Close Ticket" forState:UIControlStateNormal];
+            }
         }
     }
 }

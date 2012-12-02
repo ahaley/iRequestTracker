@@ -75,7 +75,7 @@
 
 - (void)downloadTickets
 {
-    NSURL *url = [[NSURL alloc] initWithString:@"http://rt.cieditions.com/rt/REST/1.0/search/ticket?query=Queue='General'&user=root&pass=pinhead"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://rt.cieditions.com/rt/REST/1.0/search/ticket?query=Queue='General'AND'Owner'='root'&user=root&pass=pinhead"];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
