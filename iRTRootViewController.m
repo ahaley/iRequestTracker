@@ -27,6 +27,14 @@
     [self downloadTickets];
 }
 
+- (iRTTicketViewController*)ticketViewController
+{
+    if (ticketViewController_ == nil) {
+        ticketViewController_ = [[iRTTicketViewController alloc] init];
+    }
+    return ticketViewController_;
+}
+
 - (void)parseTicketList:(NSString*)listString
 {
     NSArray* lines = [listString componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
@@ -81,15 +89,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"rtTableViewCell"];
-
-    
     [[cell textLabel] setText:[[ticketDictionary allValues] objectAtIndex:indexPath.row]];
-    
-    
     return cell;
+}
 
+#pragma mark - UITableViewDelegate Methods
+//respond to user selecting cell
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    iRTTicketViewController *child = [self ticketViewController];
+    
+    NSString *ticketId = [[ticketDictionary allKeys] objectAtIndex:indexPath.row];
+    
+    [child loadTicketId:ticketId];
+    
+    [self.navigationController pushViewController:child animated:true];
 }
 
 @end

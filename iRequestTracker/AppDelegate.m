@@ -11,6 +11,8 @@
 
 @implementation AppDelegate
 
+@synthesize navController;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -19,7 +21,10 @@
     
     UIViewController* viewController = [[iRTRootViewController alloc] init];
     
-    self.window.rootViewController = viewController;
+    self.navController = [[UINavigationController alloc]
+                           initWithRootViewController:viewController];
+
+    self.window.rootViewController = self.navController;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

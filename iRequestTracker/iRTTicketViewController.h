@@ -9,5 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface iRTTicketViewController : UIViewController
+{
+    IBOutlet UITextField *queueField;
+    IBOutlet UITextField *ownerField;
+    IBOutlet UITextField *creatorField;
+    IBOutlet UITextField *createdField;
+    IBOutlet UITextField *statusField;
+    IBOutlet UITextField *subjectField;
+}
 
+- (void)loadTicketId:(NSString*)ticketId;
 @end

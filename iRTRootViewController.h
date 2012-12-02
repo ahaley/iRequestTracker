@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "iRTTicketViewController.h"
 
 @interface iRTRootViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 {
     IBOutlet UITableView *tableView;
     NSMutableDictionary *ticketDictionary;
+    iRTTicketViewController *ticketViewController_;
 }
 
+- (iRTTicketViewController*)ticketViewController;
 
 @end
