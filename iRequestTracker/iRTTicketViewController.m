@@ -40,8 +40,6 @@
 
         NSString *value = [line substringFromIndex:range.location + range.length];
         
-        
-        
         if ([name isEqualToString:@"Queue"]) {
             queueField.text = value;
         }
