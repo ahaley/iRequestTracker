@@ -6,10 +6,11 @@
 //  Copyright (c) 2012 Antonio Haley. All rights reserved.
 //
 
-#import "iRTTicket.h"
+#import "Ticket.h"
 
-@implementation iRTTicket
+@implementation Ticket
 
+@synthesize ticketId = ticketId_;
 @synthesize queue = queue_;
 @synthesize owner = owner_;
 @synthesize creator = creator_;

@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface iRTTicket : NSObject
+@interface Ticket : NSObject
 {
+    NSString *ticketId_;
     NSString *queue_;
     NSString *owner_;
     NSString *creator_;
@@ -18,6 +19,7 @@
     NSString *created_;
 }
 
+@property (nonatomic,copy) NSString *ticketId;
 @property (nonatomic,copy) NSString *queue;
 @property (nonatomic,copy) NSString *owner;
 @property (nonatomic,copy) NSString *creator;

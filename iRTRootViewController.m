@@ -8,6 +8,7 @@
 
 #import "iRTRootViewController.h"
 #import "AFNetworking.h"
+#import "RequestTracker.h"
 
 @implementation iRTRootViewController
 
@@ -75,25 +76,12 @@
 
 - (void)downloadTickets
 {
-    NSURL *url = [[NSURL alloc] initWithString:@"http://rt.cieditions.com/rt/REST/1.0/search/ticket?query=Queue='General'AND'Owner'='root'&user=root&pass=pinhead"];
+   RequestTracker* tracker = [[RequestTracker alloc] init];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    
-    [request setHTTPMethod:@"GET"];
-    
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+    [tracker getTicketList:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"successful call to RT");
-        
         [self parseTicketList:operation.responseString];
-    }
-        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
-        }];
-    
-    [operation start];
+    }];
 }
 
 #pragma mark - UITableViewDataSource methods

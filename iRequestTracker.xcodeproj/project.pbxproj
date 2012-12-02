@@ -30,7 +30,8 @@
 		1518746A166BC939004C863C /* iRTRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15187469166BC939004C863C /* iRTRootViewController.xib */; };
 		156DA9E8166BCFED00171906 /* iRTTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 156DA9E6166BCFED00171906 /* iRTTicketViewController.m */; };
 		156DA9E9166BCFED00171906 /* iRTTicketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 156DA9E7166BCFED00171906 /* iRTTicketViewController.xib */; };
-		156DA9ED166BD06800171906 /* iRTTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 156DA9EC166BD06800171906 /* iRTTicket.m */; };
+		156DA9ED166BD06800171906 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = 156DA9EC166BD06800171906 /* Ticket.m */; };
+		15A621F0166C00E20073BC94 /* RequestTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A621EF166C00E20073BC94 /* RequestTracker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,8 +74,10 @@
 		156DA9E5166BCFED00171906 /* iRTTicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRTTicketViewController.h; sourceTree = "<group>"; };
 		156DA9E6166BCFED00171906 /* iRTTicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRTTicketViewController.m; sourceTree = "<group>"; };
 		156DA9E7166BCFED00171906 /* iRTTicketViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iRTTicketViewController.xib; sourceTree = "<group>"; };
-		156DA9EB166BD06800171906 /* iRTTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRTTicket.h; sourceTree = "<group>"; };
-		156DA9EC166BD06800171906 /* iRTTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRTTicket.m; sourceTree = "<group>"; };
+		156DA9EB166BD06800171906 /* Ticket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ticket.h; sourceTree = "<group>"; };
+		156DA9EC166BD06800171906 /* Ticket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ticket.m; sourceTree = "<group>"; };
+		15A621EE166C00E10073BC94 /* RequestTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestTracker.h; sourceTree = "<group>"; };
+		15A621EF166C00E20073BC94 /* RequestTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestTracker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,8 +136,10 @@
 				156DA9E5166BCFED00171906 /* iRTTicketViewController.h */,
 				156DA9E6166BCFED00171906 /* iRTTicketViewController.m */,
 				156DA9E7166BCFED00171906 /* iRTTicketViewController.xib */,
-				156DA9EB166BD06800171906 /* iRTTicket.h */,
-				156DA9EC166BD06800171906 /* iRTTicket.m */,
+				156DA9EB166BD06800171906 /* Ticket.h */,
+				156DA9EC166BD06800171906 /* Ticket.m */,
+				15A621EE166C00E10073BC94 /* RequestTracker.h */,
+				15A621EF166C00E20073BC94 /* RequestTracker.m */,
 			);
 			path = iRequestTracker;
 			sourceTree = "<group>";
@@ -259,7 +264,8 @@
 				1518745F166BC0BC004C863C /* AFXMLRequestOperation.m in Sources */,
 				15187460166BC0BC004C863C /* UIImageView+AFNetworking.m in Sources */,
 				156DA9E8166BCFED00171906 /* iRTTicketViewController.m in Sources */,
-				156DA9ED166BD06800171906 /* iRTTicket.m in Sources */,
+				156DA9ED166BD06800171906 /* Ticket.m in Sources */,
+				15A621F0166C00E20073BC94 /* RequestTracker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

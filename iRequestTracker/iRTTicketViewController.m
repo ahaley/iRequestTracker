@@ -8,7 +8,8 @@
 
 #import "iRTTicketViewController.h"
 #import "AFNetworking.h"
-
+#import "Ticket.h"
+#import "RequestTracker.h"
 
 @interface iRTTicketViewController ()
 
@@ -47,97 +48,32 @@
         return;
     }
     
-    NSString *urlFormat = @"http://rt.cieditions.com/rt/REST/1.0/ticket/%@/edit?user=root&pass=pinhead";
-        
-    NSString *urlString = [NSString stringWithFormat:urlFormat, ticketId_];
-    NSURL *url = [[NSURL alloc] initWithString:urlString];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    
-    [request setHTTPMethod:@"POST"];
-    
-    
-    NSString *body = [statusField.text isEqualToString:@" Resolved"] ? @"content=Status: Open" : @"content=Status: Resolved";
-       
-    
-    [request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Success" message:operation.responseString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        
-        [message show];
-        
-        NSLog(@"successful call to RT, response = %@", operation.responseString);
-        
-        
-    }
-     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-         NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
-     }];
-    
-    [operation start];
-
+    RequestTracker *tracker = [[RequestTracker alloc] init];
+    [tracker closeTicket:ticketId_];
 }
 
 - (IBAction)saveChanges
 {
     NSLog(@"Save Changes!");
     
-    NSString *urlFormat;
+    RequestTracker *tracker = [[RequestTracker alloc] init];
+
+    Ticket* ticket = [[Ticket alloc] init];
+    
+    ticket.queue = queueField.text;
+    ticket.created = createdField.text;
+    ticket.creator = creatorField.text;
+    ticket.status = statusField.text;
+    ticket.subject = subjectField.text;
+    ticket.owner = ownerField.text;
     
     if (ticketId_ != nil) {
-        urlFormat = @"http://rt.cieditions.com/rt/REST/1.0/ticket/%@/edit?user=root&pass=pinhead";
+        ticket.ticketId = ticketId_;
+        [tracker updateTicket:ticket];
     }
     else {
-        urlFormat = @"http://rt.cieditions.com/rt/REST/1.0/ticket/new?user=root&pass=pinhead";
+        [tracker createTicket:ticket];
     }
-    
-    NSString *urlString = [NSString stringWithFormat:urlFormat, ticketId_];
-    NSURL *url = [[NSURL alloc] initWithString:urlString];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    
-    [request setHTTPMethod:@"POST"];
-
-    
-    NSString *body;
-    if (ticketId_ != nil) {
-        body = [NSString stringWithFormat:
-                @"content=Subject: %@\nOwner: %@",
-                [subjectField text], [ownerField text]];
-    
-    }
-    else {
-        body = [NSString stringWithFormat:
-                @"content=Queue: General\nSubject: %@\nOwner: %@",
-                [subjectField text], [ownerField text]];
-    }
-    
-    
-    [request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Success" message:operation.responseString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        
-        [message show];
-        
-        NSLog(@"successful call to RT, response = %@", operation.responseString);
-        
-
-    }
-         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
-         }];
-    
-    [operation start];
-
-    
 }
 
 //Close keyboard after hitting return
@@ -191,30 +127,15 @@
 - (void)loadTicketId:(NSString*)ticketId
 {
     ticketId_ = ticketId;
+    
+    RequestTracker *tracker = [[RequestTracker alloc] init];
+    
+    [tracker getTicket:ticketId withSuccess: ^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"successful call to RT");
+        [self parseTicket:operation.responseString];
+    }];
 
     [submitButton setTitle:@"Save Changes" forState:UIControlStateNormal];
-    
-    NSString *urlFormat = @"http://rt.cieditions.com/rt/REST/1.0/ticket/%@?user=root&pass=pinhead";
-    NSString *urlString = [NSString stringWithFormat:urlFormat, ticketId];
-    NSURL *url = [[NSURL alloc] initWithString:urlString];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    
-    [request setHTTPMethod:@"GET"];
-    
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        NSLog(@"successful call to RT");
-        
-        [self parseTicket:operation.responseString];
-    }
-         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
-         }];
-    
-    [operation start];
 }
 
 - (void)viewDidLoad
