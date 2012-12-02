@@ -40,8 +40,6 @@
 
         NSString *value = [line substringFromIndex:range.location + range.length];
         
-        NSLog(@"name(%@) value(%@)", name, value);
-        
         
         
         if ([name isEqualToString:@"Queue"]) {
