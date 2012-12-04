@@ -20,10 +20,13 @@
     // Override point for customization after application launch.
     
     
-    UIViewController* viewController = [[iRTRootViewController alloc] init];
+   UIViewController* viewController = [[iRTRootViewController alloc] init];
+//     UIViewController* viewController = [[iRTLoginController alloc] init];
+
     
+
     self.navController = [[UINavigationController alloc]
-                           initWithRootViewController:viewController];
+                          initWithRootViewController:viewController];
 
     self.window.rootViewController = self.navController;
     

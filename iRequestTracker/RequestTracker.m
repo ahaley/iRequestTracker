@@ -17,10 +17,11 @@
     self = [super init];
     if (self) {
         url_ = @"http://rt.cieditions.com/rt/REST/1.0";
-       user_ = @"root";
+/*
+        user_ = @"root";
        pass_ = @"pinhead";
         owner_ = @"root";
-/*
+*/
         UITextField *userField;
         UITextField *passField;
         
@@ -29,7 +30,7 @@
         pass_ = passField.text;
         owner_ = userField.text;
  
- */
+ 
         
     }
     return self;
