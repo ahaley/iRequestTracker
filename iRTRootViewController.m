@@ -2,8 +2,8 @@
 //  iRTRootViewController.m
 //  iRequestTracker
 //
-//  Created by Antonio Haley on 12/2/12.
-//  Copyright (c) 2012 Antonio Haley. All rights reserved.
+//  Created by Aditya Burkule on 12/2/12.
+//  Copyright (c) 2012 Aditya Burkule. All rights reserved.
 //
 
 #import "iRTRootViewController.h"
