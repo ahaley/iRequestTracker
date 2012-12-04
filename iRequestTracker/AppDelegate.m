@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "iRTRootViewController.h"
+#import "RequestTracker.h"
 
 @implementation AppDelegate
 
