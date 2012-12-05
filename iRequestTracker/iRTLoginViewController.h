@@ -12,7 +12,9 @@
 {
     IBOutlet UITextField *userField;
     IBOutlet UITextField *passField;
+    IBOutlet UITextField *uriField;
 }
 
 - (IBAction)loginPressed;
+- (IBAction)fastLoginPressed;
 @end

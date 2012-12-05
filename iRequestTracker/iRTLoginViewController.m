@@ -40,9 +40,18 @@
 - (IBAction)loginPressed
 {
     iRTTicketListViewController* viewController = [[iRTTicketListViewController alloc] init];
+    
+
     RequestTracker* requestTracker = [[RequestTracker alloc] initWithUser:userField.text
-                                                                  andPass:passField.text];
+                                                                  andPass:passField.text
+                                                                  andUrl:uriField.text];
     viewController.requestTracker = requestTracker;
+    [[self navigationController] pushViewController:viewController animated:true];
+}
+
+- (IBAction)fastLoginPressed
+{
+    iRTTicketListViewController* viewController = [[iRTTicketListViewController alloc] init];
     [[self navigationController] pushViewController:viewController animated:true];
 }
 

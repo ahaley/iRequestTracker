@@ -45,6 +45,14 @@
     return self;
 }
 
+- (void)failMessage:(NSString*)message withTitle:(NSString*)title
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message
+                                                     delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    [alertView show];
+}
+
 - (void)getTicketList:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
 {
     NSURL *url = [self getListUrl];
@@ -57,6 +65,8 @@
     
     [operation setCompletionBlockWithSuccess:success
                                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                         [self failMessage:operation.responseString
+                                                 withTitle:@"URI Failure"];
                                          NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
                                      }];
     [operation start];
@@ -74,6 +84,9 @@
     
     [operation setCompletionBlockWithSuccess:success
                                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                         
+                                         [self failMessage:operation.responseString
+                                                 withTitle:@"URI Failure"];
                                          NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
                                      }];
     [operation start];
