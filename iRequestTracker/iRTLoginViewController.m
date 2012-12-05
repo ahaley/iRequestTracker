@@ -8,6 +8,7 @@
 
 #import "iRTLoginViewController.h"
 #import "iRTTicketListViewController.h"
+#import "RequestTracker.h"
 
 @interface iRTLoginViewController ()
 
@@ -39,7 +40,16 @@
 - (IBAction)loginPressed
 {
     iRTTicketListViewController* viewController = [[iRTTicketListViewController alloc] init];
+    RequestTracker* requestTracker = [[RequestTracker alloc] initWithUser:userField.text
+                                                                  andPass:passField.text];
+    viewController.requestTracker = requestTracker;
     [[self navigationController] pushViewController:viewController animated:true];
+}
+
+//Close keyboard after hitting return
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

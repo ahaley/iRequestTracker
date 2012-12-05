@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface iRTLoginViewController : UIViewController
+@interface iRTLoginViewController : UIViewController<UITextFieldDelegate>
 {
     IBOutlet UITextField *userField;
     IBOutlet UITextField *passField;

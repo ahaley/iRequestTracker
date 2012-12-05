@@ -23,6 +23,19 @@
     return self;
 }
 
+- (RequestTracker*)requestTracker
+{
+    if (requestTracker_ == nil) {
+        requestTracker_ = [[RequestTracker alloc] init];
+    }
+    return requestTracker_;
+}
+
+- (void)setRequestTracker:(RequestTracker *)requestTracker
+{
+    requestTracker_ = requestTracker;
+}
+
 - (void)viewDidLoad
 {
     
@@ -67,20 +80,26 @@
     }
     
     [tableView reloadData];
-    
-    for (NSString* number in ticketDictionary) {
-        NSString* ticket = [ticketDictionary objectForKey:number];
-        NSLog(@"Number (%@) ticket(%@)", number,ticket);
-    }
 }
 
 - (void)downloadTickets
 {
-   RequestTracker* tracker = [[RequestTracker alloc] init];
-    
+    RequestTracker* tracker = [self requestTracker];
+
     [tracker getTicketList:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"successful call to RT");
-        [self parseTicketList:operation.responseString];
+
+        static NSString* credentialsRequiredPreamble = @"RT/4.0.4 401 Credentials required";
+        
+        if ([operation.responseString hasPrefix:credentialsRequiredPreamble]) {
+        
+            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Success" message:operation.responseString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            
+            [message show];
+        
+        }
+        else {
+            [self parseTicketList:operation.responseString];
+        }
     }];
 }
 
