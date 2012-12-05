@@ -121,7 +121,7 @@
 - (NSURL*)getListUrl
 {
     return [[NSURL alloc] initWithString:
-            [NSString stringWithFormat:@"%@/search/ticket?query=Queue='General'AND'Owner'='%@'&user=%@&pass=%@",
+            [NSString stringWithFormat:@"%@/search/ticket?query=Queue='General'AND'Status'='new'AND'Owner'='%@'&user=%@&pass=%@",
                 url_,
                 user_,
                 user_,
