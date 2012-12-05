@@ -1,5 +1,5 @@
 //
-//  iRTRootViewController.h
+//  iRTTicketListViewController.h
 //  iRequestTracker
 //
 //  Created by Aditya Burkule on 12/2/12.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "iRTTicketViewController.h"
 
-@interface iRTRootViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface iRTTicketListViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 {
     IBOutlet UITableView *tableView;
     NSMutableDictionary *ticketDictionary;

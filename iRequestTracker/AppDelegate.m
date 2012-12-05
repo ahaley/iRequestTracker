@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "iRTRootViewController.h"
+#import "iRTTicketListViewController.h"
 #import "iRTLoginViewController.h"
 #import "RequestTracker.h"
 

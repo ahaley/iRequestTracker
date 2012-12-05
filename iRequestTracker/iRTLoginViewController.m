@@ -7,7 +7,7 @@
 //
 
 #import "iRTLoginViewController.h"
-#import "iRTRootViewController.h"
+#import "iRTTicketListViewController.h"
 
 @interface iRTLoginViewController ()
 
@@ -38,7 +38,7 @@
 
 - (IBAction)loginPressed
 {
-    iRTRootViewController* viewController = [[iRTRootViewController alloc] init];
+    iRTTicketListViewController* viewController = [[iRTTicketListViewController alloc] init];
     [[self navigationController] pushViewController:viewController animated:true];
 }
 

@@ -1,16 +1,16 @@
 //
-//  iRTRootViewController.m
+//  iRTTicketListViewController.m
 //  iRequestTracker
 //
 //  Created by Aditya Burkule on 12/2/12.
 //  Copyright (c) 2012 Aditya Burkule. All rights reserved.
 //
 
-#import "iRTRootViewController.h"
+#import "iRTTicketListViewController.h"
 #import "AFNetworking.h"
 #import "RequestTracker.h"
 
-@implementation iRTRootViewController
+@implementation iRTTicketListViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

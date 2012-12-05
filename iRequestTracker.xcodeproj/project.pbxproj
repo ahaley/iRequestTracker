@@ -16,7 +16,7 @@
 		15187431166BB949004C863C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 15187430166BB949004C863C /* Default.png */; };
 		15187433166BB949004C863C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15187432166BB949004C863C /* Default@2x.png */; };
 		15187435166BB949004C863C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15187434166BB949004C863C /* Default-568h@2x.png */; };
-		1518743D166BBA4E004C863C /* iRTRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1518743C166BBA4E004C863C /* iRTRootViewController.m */; };
+		1518743D166BBA4E004C863C /* iRTTicketListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1518743C166BBA4E004C863C /* iRTTicketListViewController.m */; };
 		15187458166BC0BC004C863C /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 15187446166BC0BC004C863C /* AFHTTPClient.m */; };
 		15187459166BC0BC004C863C /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 15187448166BC0BC004C863C /* AFHTTPRequestOperation.m */; };
 		1518745A166BC0BC004C863C /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1518744A166BC0BC004C863C /* AFImageRequestOperation.m */; };
@@ -27,7 +27,7 @@
 		1518745F166BC0BC004C863C /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 15187455166BC0BC004C863C /* AFXMLRequestOperation.m */; };
 		15187460166BC0BC004C863C /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 15187457166BC0BC004C863C /* UIImageView+AFNetworking.m */; };
 		15187463166BC282004C863C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15187462166BC282004C863C /* SystemConfiguration.framework */; };
-		1518746A166BC939004C863C /* iRTRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15187469166BC939004C863C /* iRTRootViewController.xib */; };
+		1518746A166BC939004C863C /* iRTTicketListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15187469166BC939004C863C /* iRTTicketListViewController.xib */; };
 		156DA9E8166BCFED00171906 /* iRTTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 156DA9E6166BCFED00171906 /* iRTTicketViewController.m */; };
 		156DA9E9166BCFED00171906 /* iRTTicketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 156DA9E7166BCFED00171906 /* iRTTicketViewController.xib */; };
 		156DA9ED166BD06800171906 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = 156DA9EC166BD06800171906 /* Ticket.m */; };
@@ -46,12 +46,12 @@
 		1518742A166BB949004C863C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1518742C166BB949004C863C /* iRequestTracker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iRequestTracker-Prefix.pch"; sourceTree = "<group>"; };
 		1518742D166BB949004C863C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		1518742E166BB949004C863C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1518742E166BB949004C863C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		15187430166BB949004C863C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		15187432166BB949004C863C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		15187434166BB949004C863C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		1518743B166BBA4E004C863C /* iRTRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iRTRootViewController.h; path = ../iRTRootViewController.h; sourceTree = "<group>"; };
-		1518743C166BBA4E004C863C /* iRTRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iRTRootViewController.m; path = ../iRTRootViewController.m; sourceTree = "<group>"; };
+		1518743B166BBA4E004C863C /* iRTTicketListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = iRTTicketListViewController.h; path = ../iRTTicketListViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		1518743C166BBA4E004C863C /* iRTTicketListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = iRTTicketListViewController.m; path = ../iRTTicketListViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		15187445166BC0BC004C863C /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		15187446166BC0BC004C863C /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		15187447166BC0BC004C863C /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		15187456166BC0BC004C863C /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		15187457166BC0BC004C863C /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		15187462166BC282004C863C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		15187469166BC939004C863C /* iRTRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = iRTRootViewController.xib; path = ../iRTRootViewController.xib; sourceTree = "<group>"; };
+		15187469166BC939004C863C /* iRTTicketListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = iRTTicketListViewController.xib; path = ../iRTTicketListViewController.xib; sourceTree = "<group>"; };
 		156DA9E5166BCFED00171906 /* iRTTicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRTTicketViewController.h; sourceTree = "<group>"; };
 		156DA9E6166BCFED00171906 /* iRTTicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRTTicketViewController.m; sourceTree = "<group>"; };
 		156DA9E7166BCFED00171906 /* iRTTicketViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iRTTicketViewController.xib; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		15A621EE166C00E10073BC94 /* RequestTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestTracker.h; sourceTree = "<group>"; };
 		15A621EF166C00E20073BC94 /* RequestTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestTracker.m; sourceTree = "<group>"; };
 		15AA53F5166EC58600885326 /* iRTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRTLoginViewController.h; sourceTree = "<group>"; };
-		15AA53F6166EC58600885326 /* iRTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRTLoginViewController.m; sourceTree = "<group>"; };
+		15AA53F6166EC58600885326 /* iRTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = iRTLoginViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		C9F7C855166E8F8C0014F0CF /* iRTLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iRTLoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,9 +132,9 @@
 		15187424166BB949004C863C /* iRequestTracker */ = {
 			isa = PBXGroup;
 			children = (
-				1518743B166BBA4E004C863C /* iRTRootViewController.h */,
-				1518743C166BBA4E004C863C /* iRTRootViewController.m */,
-				15187469166BC939004C863C /* iRTRootViewController.xib */,
+				1518743B166BBA4E004C863C /* iRTTicketListViewController.h */,
+				1518743C166BBA4E004C863C /* iRTTicketListViewController.m */,
+				15187469166BC939004C863C /* iRTTicketListViewController.xib */,
 				1518742D166BB949004C863C /* AppDelegate.h */,
 				1518742E166BB949004C863C /* AppDelegate.m */,
 				15187425166BB949004C863C /* Supporting Files */,
@@ -247,7 +247,7 @@
 				15187431166BB949004C863C /* Default.png in Resources */,
 				15187433166BB949004C863C /* Default@2x.png in Resources */,
 				15187435166BB949004C863C /* Default-568h@2x.png in Resources */,
-				1518746A166BC939004C863C /* iRTRootViewController.xib in Resources */,
+				1518746A166BC939004C863C /* iRTTicketListViewController.xib in Resources */,
 				156DA9E9166BCFED00171906 /* iRTTicketViewController.xib in Resources */,
 				C9F7C856166E8F8D0014F0CF /* iRTLoginViewController.xib in Resources */,
 			);
@@ -262,7 +262,7 @@
 			files = (
 				1518742B166BB949004C863C /* main.m in Sources */,
 				1518742F166BB949004C863C /* AppDelegate.m in Sources */,
-				1518743D166BBA4E004C863C /* iRTRootViewController.m in Sources */,
+				1518743D166BBA4E004C863C /* iRTTicketListViewController.m in Sources */,
 				15187458166BC0BC004C863C /* AFHTTPClient.m in Sources */,
 				15187459166BC0BC004C863C /* AFHTTPRequestOperation.m in Sources */,
 				1518745A166BC0BC004C863C /* AFImageRequestOperation.m in Sources */,
