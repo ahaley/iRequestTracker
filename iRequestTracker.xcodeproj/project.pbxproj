@@ -32,7 +32,8 @@
 		156DA9E9166BCFED00171906 /* iRTTicketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 156DA9E7166BCFED00171906 /* iRTTicketViewController.xib */; };
 		156DA9ED166BD06800171906 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = 156DA9EC166BD06800171906 /* Ticket.m */; };
 		15A621F0166C00E20073BC94 /* RequestTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A621EF166C00E20073BC94 /* RequestTracker.m */; };
-		C9F7C856166E8F8D0014F0CF /* RequestTracker.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F7C855166E8F8C0014F0CF /* RequestTracker.xib */; };
+		15AA53F7166EC58600885326 /* iRTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AA53F6166EC58600885326 /* iRTLoginViewController.m */; };
+		C9F7C856166E8F8D0014F0CF /* iRTLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F7C855166E8F8C0014F0CF /* iRTLoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +80,9 @@
 		156DA9EC166BD06800171906 /* Ticket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ticket.m; sourceTree = "<group>"; };
 		15A621EE166C00E10073BC94 /* RequestTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestTracker.h; sourceTree = "<group>"; };
 		15A621EF166C00E20073BC94 /* RequestTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestTracker.m; sourceTree = "<group>"; };
-		C9F7C855166E8F8C0014F0CF /* RequestTracker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RequestTracker.xib; sourceTree = "<group>"; };
+		15AA53F5166EC58600885326 /* iRTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRTLoginViewController.h; sourceTree = "<group>"; };
+		15AA53F6166EC58600885326 /* iRTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRTLoginViewController.m; sourceTree = "<group>"; };
+		C9F7C855166E8F8C0014F0CF /* iRTLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iRTLoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +145,9 @@
 				156DA9EC166BD06800171906 /* Ticket.m */,
 				15A621EE166C00E10073BC94 /* RequestTracker.h */,
 				15A621EF166C00E20073BC94 /* RequestTracker.m */,
-				C9F7C855166E8F8C0014F0CF /* RequestTracker.xib */,
+				15AA53F5166EC58600885326 /* iRTLoginViewController.h */,
+				15AA53F6166EC58600885326 /* iRTLoginViewController.m */,
+				C9F7C855166E8F8C0014F0CF /* iRTLoginViewController.xib */,
 			);
 			path = iRequestTracker;
 			sourceTree = "<group>";
@@ -244,7 +249,7 @@
 				15187435166BB949004C863C /* Default-568h@2x.png in Resources */,
 				1518746A166BC939004C863C /* iRTRootViewController.xib in Resources */,
 				156DA9E9166BCFED00171906 /* iRTTicketViewController.xib in Resources */,
-				C9F7C856166E8F8D0014F0CF /* RequestTracker.xib in Resources */,
+				C9F7C856166E8F8D0014F0CF /* iRTLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +275,7 @@
 				156DA9E8166BCFED00171906 /* iRTTicketViewController.m in Sources */,
 				156DA9ED166BD06800171906 /* Ticket.m in Sources */,
 				15A621F0166C00E20073BC94 /* RequestTracker.m in Sources */,
+				15AA53F7166EC58600885326 /* iRTLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

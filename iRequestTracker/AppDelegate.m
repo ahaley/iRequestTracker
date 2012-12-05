@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "iRTRootViewController.h"
+#import "iRTLoginViewController.h"
 #import "RequestTracker.h"
 
 @implementation AppDelegate
@@ -20,8 +21,7 @@
     // Override point for customization after application launch.
     
     
-//   UIViewController* viewController = [[iRTRootViewController alloc] init];
-     UIViewController* viewController = [[iRTLoginController alloc] init];
+     UIViewController* viewController = [[iRTLoginViewController alloc] init];
 
     
 

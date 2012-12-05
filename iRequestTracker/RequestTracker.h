@@ -10,26 +10,16 @@
 #import "AFHTTPClient.h"
 #import "Ticket.h"
 
-@interface iRTLoginController : UIViewController<UITextFieldDelegate>
-{
-    IBOutlet UITextField *userField;
-    IBOutlet UITextField *passField;
-    IBOutlet UIButton *loginButton;
-    
-}
-@end
-
 @interface RequestTracker : NSObject
 {
     NSString *user_;
     NSString *pass_;
     NSString *url_;
-    NSString *owner_;
 }
 
 - (id)init;
 
-- (id)initWithUser:(NSString*)user andPass:(NSString*)pass andOwner:(NSString*)owner andUrl:(NSString*)url;
+- (id)initWithUser:(NSString*)user andPass:(NSString*)pass andUrl:(NSString*)url;
 
 - (void)getTicketList:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success;
 
@@ -41,8 +31,5 @@
 - (void)createTicket:(Ticket*)ticket;
 
 - (void)closeTicket:(NSString*)ticketId;
-
-- (IBAction)Login;
-
 
 @end

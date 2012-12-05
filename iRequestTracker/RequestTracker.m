@@ -10,21 +10,6 @@
 #import "AFNetworking.h"
 #import "Ticket.h"
 
-@interface iRTLoginController ()
-
-@end
-
-@implementation iRTLoginController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-@end
 @implementation RequestTracker
 
 - (id)init
@@ -32,33 +17,19 @@
     self = [super init];
     if (self) {
         url_ = @"http://rt.cieditions.com/rt/REST/1.0";
-/*
         user_ = @"root";
        pass_ = @"pinhead";
-        owner_ = @"root";
-*/
-        UITextField *userField;
-        UITextField *passField;
-        
-
-        user_ = userField.text;
-        pass_ = passField.text;
-        owner_ = userField.text;
- 
- 
-        
     }
     return self;
 }
 
-- (id)initWithUser:(NSString*)user andPass:(NSString*)pass andOwner:(NSString*)owner andUrl:(NSString*)url
+- (id)initWithUser:(NSString*)user andPass:(NSString*)pass andUrl:(NSString*)url
 {
     self = [super init];
     if (self) {
         user_ = user;
         pass_ = pass;
         url_ = url;
-        owner_ = owner;
     }
     return self;
 }
@@ -128,7 +99,7 @@
     return [[NSURL alloc] initWithString:
             [NSString stringWithFormat:@"%@/search/ticket?query=Queue='General'AND'Owner'='%@'&user=%@&pass=%@",
                 url_,
-                owner_,
+                user_,
                 user_,
                 pass_]];
 }
