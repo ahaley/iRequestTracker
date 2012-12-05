@@ -126,14 +126,18 @@
         }
         else if ([name isEqualToString:@"Status"]) {
             statusField.text = value;
+   /*
             if ([value isEqualToString:@" Resolved"]) {
                 [closeTicketButton setTitle:@"Reopen Ticket" forState:UIControlStateNormal];
             }
             else if ([value isEqualToString:@"new"]) {
                 [closeTicketButton setTitle:@"Close Ticket" forState:UIControlStateNormal];
             }
+    */
         }
+    
     }
+    
 }
 
 - (void)loadTicketId:(NSString*)ticketId
