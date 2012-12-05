@@ -40,7 +40,7 @@
     if (self) {
         user_ = user;
         pass_ = pass;
-        url_ = url;
+        url_ = [NSString stringWithFormat:@"%@/rt/REST/1.0", url];
     }
     return self;
 }
