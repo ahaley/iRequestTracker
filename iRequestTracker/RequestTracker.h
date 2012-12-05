@@ -19,6 +19,8 @@
 
 - (id)init;
 
+- (id)initWithUser:(NSString*)user andPass:(NSString*)pass;
+
 - (id)initWithUser:(NSString*)user andPass:(NSString*)pass andUrl:(NSString*)url;
 
 - (void)getTicketList:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success;

@@ -18,7 +18,18 @@
     if (self) {
         url_ = @"http://rt.cieditions.com/rt/REST/1.0";
         user_ = @"root";
-       pass_ = @"pinhead";
+        pass_ = @"pinhead";
+    }
+    return self;
+}
+
+- (id)initWithUser:(NSString*)user andPass:(NSString*)pass
+{
+    self = [super init];
+    if (self) {
+        user_ = user;
+        pass_ = pass;
+        url_ = @"http://rt.cieditions.com/rt/REST/1.0";
     }
     return self;
 }

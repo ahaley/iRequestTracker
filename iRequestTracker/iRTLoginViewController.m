@@ -7,6 +7,7 @@
 //
 
 #import "iRTLoginViewController.h"
+#import "iRTRootViewController.h"
 
 @interface iRTLoginViewController ()
 
@@ -37,7 +38,8 @@
 
 - (IBAction)loginPressed
 {
-    NSLog(@"loginPressed");
+    iRTRootViewController* viewController = [[iRTRootViewController alloc] init];
+    [[self navigationController] pushViewController:viewController animated:true];
 }
 
 @end
