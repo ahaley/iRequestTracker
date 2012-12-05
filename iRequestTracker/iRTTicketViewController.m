@@ -42,13 +42,26 @@
     ticketId_ = nil;
 }
 
+- (void)setRequestTracker:(RequestTracker *)requestTracker
+{
+    requestTracker_ = requestTracker;
+}
+
+- (RequestTracker*)requestTracker
+{
+    if (requestTracker_ == nil) {
+        requestTracker_ = [[RequestTracker alloc] init];
+    }
+    return requestTracker_;
+}
+
 - (void)closeTicket
 {
     if (ticketId_ == nil) {
         return;
     }
     
-    RequestTracker *tracker = [[RequestTracker alloc] init];
+    RequestTracker *tracker = [self requestTracker];
     [tracker closeTicket:ticketId_];
 }
 
@@ -56,8 +69,7 @@
 {
     NSLog(@"Save Changes!");
     
-    RequestTracker *tracker = [[RequestTracker alloc] init];
-
+    RequestTracker *tracker = [self requestTracker];
     Ticket* ticket = [[Ticket alloc] init];
     
     ticket.queue = queueField.text;
@@ -128,7 +140,7 @@
 {
     ticketId_ = ticketId;
     
-    RequestTracker *tracker = [[RequestTracker alloc] init];
+    RequestTracker *tracker = [self requestTracker];
     
     [tracker getTicket:ticketId withSuccess: ^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"successful call to RT");

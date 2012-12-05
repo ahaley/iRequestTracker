@@ -36,6 +36,16 @@
     requestTracker_ = requestTracker;
 }
 
+- (iRTTicketViewController*)ticketViewController
+{
+    if (ticketViewController_ == nil) {
+        ticketViewController_ = [[iRTTicketViewController alloc] init];
+        [ticketViewController_ setRequestTracker:[self requestTracker]];
+    }
+    return ticketViewController_;
+}
+
+
 - (void)viewDidLoad
 {
     
@@ -58,13 +68,6 @@
     [self.navigationController pushViewController:child animated:true];
 }
 
-- (iRTTicketViewController*)ticketViewController
-{
-    if (ticketViewController_ == nil) {
-        ticketViewController_ = [[iRTTicketViewController alloc] init];
-    }
-    return ticketViewController_;
-}
 
 - (void)parseTicketList:(NSString*)listString
 {
@@ -92,7 +95,7 @@
         
         if ([operation.responseString hasPrefix:credentialsRequiredPreamble]) {
         
-            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Success" message:operation.responseString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Login Fail" message:operation.responseString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             
             [message show];
         

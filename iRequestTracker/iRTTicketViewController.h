@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RequestTracker.h"
 
 @interface iRTTicketViewController : UIViewController<UITextFieldDelegate>
 {
@@ -20,7 +21,10 @@
     IBOutlet UIButton *closeTicketButton;
     
     NSString* ticketId_;
+    RequestTracker* requestTracker_;
 }
+
+@property (nonatomic, retain) RequestTracker* requestTracker;
 
 - (IBAction)saveChanges;
 - (IBAction)closeTicket;
