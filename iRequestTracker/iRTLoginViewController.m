@@ -2,9 +2,6 @@
 //  iRTLoginViewController.m
 //  iRequestTracker
 //
-//  Created by Aditya Burkule on 12/4/12.
-//  Copyright (c) 2012 Aditya Burkule. All rights reserved.
-//
 
 #import "iRTLoginViewController.h"
 #import "iRTTicketListViewController.h"

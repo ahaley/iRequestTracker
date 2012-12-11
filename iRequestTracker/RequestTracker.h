@@ -2,9 +2,6 @@
 //  RequestTracker.h
 //  iRequestTracker
 //
-//  Created by Aditya Burkule on 12/2/12.
-//  Copyright (c) 2012 Aditya Burkule. All rights reserved.
-//
 
 #import <Foundation/Foundation.h>
 #import "AFHTTPClient.h"
